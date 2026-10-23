@@ -1470,6 +1470,7 @@ function initScene() {
     dimGroup.visible = !!md.dims && !md.under;
     d5Group.visible = !!md.d5 && !md.under;
     parkGroup.visible = !md.under && !md.d5;
+    ['fence', 'fence2', 'light', 'gate', 'pgate', 'toe'].forEach((n) => { if (LAYERS[n]) LAYERS[n].visible = !md.under; });   // 分階出土 (X-ray): fences, lights and gates removed
     if (LAYERS.corridor) LAYERS.corridor.visible = !md.under;
     applyExc();
     routeGroup.visible = true;
