@@ -543,19 +543,19 @@ button.lgb.scheme small{line-height:1.45}
     <section class="pg" data-s="issues" style="--c:var(--issue)">
       <div class="mk"><span>12</span>待討論議題<em>A1-05・A1-01</em></div>
       <h2>待討論<em>議題</em>：<br>圍籬定案與 D5 動線</h2>
-      <p class="lede"><b>議題一　圍籬型式</b>：定案為 <b>0.6 m 防溢座＋3.0 m 圍籬板片＋0.6 m 隔音帆布</b>（總高 4.2 m，A1-05），模型已全面更新。<br><b>議題二　林森北路加開 D5 大門</b>（8 m 拉開式），作為<b>遺構吊裝及搬運動線</b>的可行性檢討：(1) 公車亭是否影響 D5 出入口動線，可否辦理遷移。</p>
+      <p class="lede"><b>議題一　圍籬型式</b>：定案為 <b>0.6 m 防溢座＋3.0 m 圍籬板片＋0.6 m 隔音帆布</b>（總高 4.2 m，A1-05），模型已全面更新。<br><b>議題二　林森北路加開 D5 大門</b>（8 m 拉開式），作為<b>遺構吊裝及搬運動線</b>的可行性檢討：(1) 公車停靠區是否影響 D5 出入口動線，可否辦理遷移。右側點選議題即可定位。</p>
       <div class="figs">
         <div class="fig"><div class="n">8<small>m</small></div><div class="l">D5 開口寬</div></div>
         <div class="fig"><div class="n">3.85<small>m</small></div><div class="l">公車停靠區與開口前緣重疊</div></div>
-        <div class="fig"><div class="n">≥7<small>m</small></div><div class="l">建議停靠區＋候車亭北移</div></div>
+        <div class="fig"><div class="n">≥7<small>m</small></div><div class="l">建議公車停靠區北移</div></div>
       </div>
       <ul class="notes">
-        <li class="nt"><b>現況</b>候車亭南端伸入開口約 0.3 m；公車停靠區與開口前緣重疊 3.85 m；開口內有路燈 1 支、排水溝蓋 2 處。</li>
-        <li class="nt"><b>研判</b>搬運車由林森北路北行車道右轉進 D5，公車停靠時擋住開口北半部，候車亭、路燈在轉彎範圍內，<b>會影響動線</b>。</li>
-        <li class="nt"><b>建議</b>停靠區與候車亭北移 ≥7 m（北側標線配合調整），路燈遷出開口，溝蓋改重型或加鋪鋼板；站位遷移洽公共運輸處，路燈洽路燈工程管理處。</li>
+        <li class="nt"><b>現況</b>公車停靠區（3×10 m）與 D5 開口前緣重疊 3.85 m；開口內有路燈 1 支、排水溝蓋 2 處。</li>
+        <li class="nt"><b>研判</b>搬運車由林森北路北行車道右轉進 D5，公車停靠時擋住開口北半部，路燈也在轉彎範圍內，<b>會影響動線</b>。</li>
+        <li class="nt"><b>建議</b>公車停靠區北移 ≥7 m（北側標線配合調整），路燈遷出開口，溝蓋改重型或加鋪鋼板；站位遷移洽公共運輸處，路燈洽路燈工程管理處。</li>
         <li class="nt"><b>待確認</b>搬運車型與迴轉半徑，需以轉彎軌跡檢核。</li>
       </ul>
-      <p class="src">依據：A1-05 安全圍籬及施工大門詳圖（定案版）；A1-01 現況測量圖（候車亭座椅、公車停靠區、路燈、排水溝蓋位置）。候車亭外框依座椅位置推估，遷移距離為初估，需現場複核。</p>
+      <p class="src">依據：A1-05 安全圍籬及施工大門詳圖（定案版）；A1-01 現況測量圖（公車停靠區、路燈、排水溝蓋位置）。遷移距離為初估，需現場複核。</p>
     </section>
 
     <section class="pg" data-s="end" style="--c:var(--route)">
@@ -635,9 +635,11 @@ button.lgb.scheme small{line-height:1.45}
     <div class="sd" data-for="issues">
       <h3>討論議題<em>點選定位</em></h3>
       <div id="issueList"></div>
+      <div id="d5Box" hidden>
       <h3>D5 出入口量測<em>A1-01</em></h3>
       <ul class="lg" id="d5Lg"></ul>
       <div class="btnrow"><button class="btn" id="propBtn" type="button">顯示建議遷移位置</button></div>
+      </div>
     </div>
     <div class="sd" data-for="env">
       <h3>環境維護措施</h3>
@@ -1312,23 +1314,13 @@ function initScene() {
   const D5I = {
     gate: [-100.63, -92.63], fenceX: -23.4, curbX: -29.1, swZ: 0.17, roadZ: 0.03,
     bay: [-32.61, -96.48, -29.61, -86.48],                       // 公車停靠區 (0-parking)
-    shelter: [-28.6, -93.1, -26.4, -88.9],                         // 候車亭: footprint estimated from the two benches (x −28.47…−26.55, y −92.93…−89.16)
-    benches: [[-27.27, -92.51, -26.55, -89.16], [-28.47, -92.93, -27.9, -91.87]],
     light: [-27.58, -94.68],                                       // 路燈 (96914)
     drains: [[-29.5, -93.49], [-29.47, -97.98], [-29.45, -102.48]],
-    shift: 7.0,                                                    // proposed northward move of bay + shelter (bay south end 3 m clear of the gate)
+    shift: 7.0,                                                    // proposed northward move of the bus bay (bay south end 3 m clear of the gate)
   };
   S.D5I = D5I;
-  const shelterGroup = new T.Group(); shelterGroup.name = 'busShelter'; ROOT.add(shelterGroup);
   const d5Group = new T.Group(); d5Group.visible = false; ROOT.add(d5Group);
   const propGroup = new T.Group(); propGroup.visible = false; d5Group.add(propGroup);
-  function shelterMesh(r, grp, roofM, postM, glassM) {
-    const [x0, y0, x1, y1] = r, z = D5I.swZ, H = 2.6;
-    const roof = new T.Mesh(boxG(x0 - 0.1, x1 + 0.1, y0, y1, z + H, z + H + 0.1), roofM); roof.castShadow = true; grp.add(roof);
-    [[x1 - 0.08, y0 + 0.1], [x1 - 0.08, y1 - 0.1], [x0 + 0.5, y0 + 0.1], [x0 + 0.5, y1 - 0.1]].forEach(([x, y]) => { const m = new T.Mesh(boxG(x - 0.05, x + 0.05, y - 0.05, y + 0.05, z, z + H), postM); m.castShadow = true; grp.add(m); });
-    grp.add(new T.Mesh(boxG(x1 - 0.1, x1 - 0.06, y0 + 0.15, y1 - 0.15, z + 0.3, z + 2.3), glassM));   // back panel on the fence side
-    return grp;
-  }
   function dimAB(a, b, dz) {
     // plan dimension a→b drawn on top (same style as dimNS)
     const g = new T.Group(), L = Math.hypot(b[0] - a[0], b[1] - a[1]), add = (m) => { m.renderOrder = 12; g.add(m); };
@@ -1346,29 +1338,15 @@ function initScene() {
     e.renderOrder = 5; grp.add(e); return grp;
   }
   function buildIssues() {
-    // existing bus shelter: always shown as street context
-    shelterMesh(D5I.shelter, shelterGroup, mat('shelterRoof'), mat('shelter'), mat('shelterRoof', { transparent: true, opacity: 0.35, depthWrite: false }));
-    D5I.benches.forEach(([x0, y0, x1, y1]) => shelterGroup.add(new T.Mesh(boxG(x0, x1, y0, y1, D5I.swZ, D5I.swZ + 0.45), mat('shelter'))));
     // issue overlay
     const issueFill = mat('issue', { transparent: true, opacity: 0.32, depthWrite: false, side: T.DoubleSide });
     d5Group.add(flatRect(D5I.bay, D5I.roadZ + 0.04, issueFill, 'issue'));
     d5Group.add(flatRect([D5I.curbX, D5I.gate[0], D5I.fenceX, D5I.gate[1]], D5I.swZ + 0.02, mat('frontage', { transparent: true, opacity: 0.22, depthWrite: false, side: T.DoubleSide }), 'frontage'));
-    const sb = boxG(D5I.shelter[0] - 0.15, D5I.shelter[2] + 0.15, D5I.shelter[1] - 0.15, D5I.shelter[3] + 0.15, D5I.swZ, D5I.swZ + 2.9);
-    const hl = new T.Mesh(sb, mat('issue', { transparent: true, opacity: 0.18, depthWrite: false })); hl.renderOrder = 6; d5Group.add(hl);
-    d5Group.add(new T.LineSegments(new T.EdgesGeometry(sb), lineMat('issue', 1)));
     // street light inside the gate frontage
     const [lx, ly] = D5I.light, lm = mat('issue');
     const pole = new T.Mesh(new T.CylinderGeometry(0.09, 0.12, 8, 10).rotateX(Math.PI / 2), lm); pole.position.set(lx, ly, D5I.swZ + 4); pole.castShadow = true; d5Group.add(pole);
     d5Group.add(new T.Mesh(boxG(lx - 1.8, lx, ly - 0.05, ly + 0.05, D5I.swZ + 7.8, D5I.swZ + 7.9), lm));
     D5I.drains.forEach(([x, y]) => d5Group.add(new T.Mesh(boxG(x - 0.25, x + 0.25, y - 0.35, y + 0.35, D5I.swZ, D5I.swZ + 0.03), lm)));
-    // heritage lifting / transport route: 林森北路 northbound curb lane -> right turn into D5 -> 月台暫置區 (schematic)
-    const pts = [[-34.2, -128], [-34.2, -110], [-33.6, -103.5], [-30.5, -98.6], [-26, -96.8], [-21, -96.6], [-16.5, -97.6], [-14.8, -101], [-14.6, -104.5]].map(([x, y]) => new T.Vector3(x, y, 0.45));
-    const curve = new T.CatmullRomCurve3(pts, false, 'centripetal');
-    const rm = mat('heritageRoute', { transparent: true, opacity: 0.85 });
-    d5Group.add(new T.Mesh(new T.TubeGeometry(curve, 120, 0.22, 8, false), rm));
-    const end = curve.getPoint(1), tan = curve.getTangent(1);
-    const head = new T.Mesh(new T.ConeGeometry(0.75, 1.8, 14), rm); head.position.copy(end).addScaledVector(tan, 0.8);
-    head.quaternion.setFromUnitVectors(new T.Vector3(0, 1, 0), tan); d5Group.add(head);
     // dimensions
     S.d5dims = {
       gate: dimAB([D5I.fenceX - 0.9, D5I.gate[0]], [D5I.fenceX - 0.9, D5I.gate[1]], 1.3),
@@ -1380,9 +1358,6 @@ function initScene() {
     // proposed relocation (north by D5I.shift)
     const sh = D5I.shift, bayP = [D5I.bay[0], D5I.bay[1] + sh, D5I.bay[2], D5I.bay[3] + sh];
     propGroup.add(flatRect(bayP, D5I.roadZ + 0.05, mat('proposal', { transparent: true, opacity: 0.25, depthWrite: false, side: T.DoubleSide }), 'proposal'));
-    const sp = boxG(D5I.shelter[0], D5I.shelter[2], D5I.shelter[1] + sh, D5I.shelter[3] + sh, D5I.swZ, D5I.swZ + 2.7);
-    const spm = new T.Mesh(sp, mat('proposal', { transparent: true, opacity: 0.2, depthWrite: false })); spm.renderOrder = 6; propGroup.add(spm);
-    propGroup.add(new T.LineSegments(new T.EdgesGeometry(sp), lineMat('proposal', 1)));
     propGroup.add(dimAB([-38.2, D5I.bay[1]], [-38.2, D5I.bay[1] + sh], 1.0));
   }
   S.setProposal = (on) => { propGroup.visible = !!on; S.dirty = true; };
@@ -1481,8 +1456,8 @@ function initScene() {
     applyScheme();
     applyParked();
     dimGroup.visible = !!md.dims && !md.under;
-    d5Group.visible = !!md.d5 && !md.under; shelterGroup.visible = !md.under;
-    if (LAYERS.corridor) LAYERS.corridor.visible = !md.under && !md.d5;   // D5 issue view: canopy hidden so the bus shelter under it reads
+    d5Group.visible = !!md.d5 && !md.under;
+    if (LAYERS.corridor) LAYERS.corridor.visible = !md.under;
     applyExc();
     routeGroup.visible = true;
     shadowDirty = true; S.dirty = true;
@@ -1710,17 +1685,19 @@ const P = {
     { p: [133.85, -39.0, 0.3], t: '防溢座 0.6 m', s: '140 kgf/cm² 混凝土', c: 'var(--fence)', k: 'tag' },
     { p: [133.75, -43.6, 4.4], t: 'H 4.2 m', s: '0.6＋3.0＋0.6', c: 'var(--ink)', k: 'dim' },
   ],
+  issuesHome: () => [
+    { p: [133.7, -40, 4.6], t: '議題一　圍籬型式', s: '0.6＋3.0＋0.6 m', c: 'var(--fence)' },
+    { p: [-23.47, -96.64, 6.4], t: '議題二　D5 出入口', s: '公車停靠區是否遷移', c: 'var(--issue)' },
+  ],
   issues: () => {
         const list = [
       ...PINSETS.gatesD().filter((p) => p.t === 'D5'),
-      { p: [-27.5, -89.6, 3.3], t: '候車亭（現況）', s: '約 2.2×4.2 m', c: 'var(--issue)' },
       { p: [-24.3, -96.63, 1.3], t: '8 m', s: 'D5 開口', c: 'var(--ink)', k: 'dim' },
       { p: [-33.5, -94.55, 0.9], t: '3.85 m', s: '公車停靠區重疊', c: 'var(--ink)', k: 'dim' },
       { p: [-28.28, -93.65, 1.3], t: '2.05 m', s: '路燈（開口內）至北緣', c: 'var(--ink)', k: 'dim' },
       { p: [-26.25, -102.2, 1.3], t: '5.7 m', s: '人行道寬', c: 'var(--ink)', k: 'dim' },
-      { p: [-34.2, -109, 0.6], t: '遺構吊裝搬運動線（示意）', s: '北行車道右轉 D5 → 月台暫置區', c: 'var(--heritage)' },
     ];
-    if (PROP) list.push({ p: [-38.2, -92.98, 1.0], t: '北移 7 m', s: '建議：停靠區＋候車亭', c: 'var(--proposal)', k: 'dim' });
+    if (PROP) list.push({ p: [-38.2, -92.98, 1.0], t: '北移 7 m', s: '建議：公車停靠區北移', c: 'var(--proposal)', k: 'dim' });
     return list;
   },
   end: () => PINSETS.gatesD().concat(PINSETS.opensE(), [{ p: lineAt((FEAT.tunnel || {}).A, 96, 10.8), t: '華山引道隧道範圍', c: 'var(--tunnel)', k: 'tag' }]),
@@ -1792,7 +1769,7 @@ const CH = [
   { id: 'exc', rail: '分階出土', view: { t: [58, -52, -11], az: 214, el: 22, w: 196 }, side: true, mode: { under: true, ghost: 1, arrows: false, trucks: false, ctx: 0, openings: false, excStage: 0 }, pins: 'exc' },
   { id: 'traffic', rail: '交通維持', view: { t: [30, -60, 0], az: 186, el: 64, w: 420 }, side: true, legend: true, mode: { ext: true, entry: true }, pins: 'traffic' },
   { id: 'env', rail: '環境維護', view: { t: [56, -12, 1], az: 206, el: 40, w: 160 }, side: true, pins: 'env' },
-  { id: 'issues', rail: '討論議題', view: { t: [-29, -93, 1], az: 270, el: 45, w: 40 }, side: true, mode: { d5: true, arrows: false, trucks: false, ctx: 0.4, openings: false }, pins: 'issues' },
+  { id: 'issues', rail: '討論議題', view: { t: [50, -57, 0], az: 202, el: 47, w: 244 }, side: true, mode: { arrows: false, trucks: false, openings: false }, pins: 'issuesHome' },
   { id: 'end', rail: '總覽', view: { t: [53, -56, 4], az: 224, el: 33, w: 244 }, legend: true, pins: 'end', spin: 1.2, mode: { tunnel: true } },
 ];
 CH.forEach((c, i) => { c.i = i; c.sec = $(`.pg[data-s="${c.id}"]`); });
@@ -1939,28 +1916,26 @@ $$('#washList button').forEach((b) => b.addEventListener('click', () => { $$('#w
 {
   const ISS = [
     { t: '議題一　圍籬型式定案', s: '0.6 m 防溢座＋3.0 m 板片＋0.6 m 隔音帆布', c: 'var(--fence)', ic: '一', v: { t: [133.66, -40.5, 2.1], az: 70, el: 6, w: 10 }, mode: { d5: false, ctx: 0 }, pins: 'fenceSpec' },
-    { t: '議題二　D5 遺構吊裝搬運', s: '公車亭是否影響出入口動線、可否遷移', c: 'var(--issue)', ic: '二', v: { t: [-29, -93, 1], az: 270, el: 45, w: 40 }, mode: { d5: true, ctx: 0.4 } },
+    { t: '議題二　D5 遺構吊裝搬運', s: '公車停靠區是否影響出入口動線、可否遷移', c: 'var(--issue)', ic: '二', v: { t: [-29, -93, 1], az: 270, el: 45, w: 40 }, mode: { d5: true, ctx: 0.4 }, pins: 'issues' },
   ];
   $('#issueList').innerHTML = ISS.map((x, i) => `<button class="lgb two" type="button" data-i="${i}" aria-pressed="false">${chip(x.ic, x.c, true)}<span><b>${x.t}</b><br><small>${x.s}</small></span><em></em></button>`).join('');
   $$('#issueList button').forEach((b) => b.addEventListener('click', () => {
     if (!S.ok) return; const x = ISS[+b.dataset.i];
     $$('#issueList button').forEach((y) => y.setAttribute('aria-pressed', String(y === b)));
-    markUser(); S.setMode(x.mode); setPins(x.pins ? P[x.pins]() : P.issues()); camTo(x.v, false, 1500); S.setMarker && S.setMarker(null);
+    markUser(); S.setMode(x.mode); setPins(P[x.pins]()); $('#d5Box').hidden = !x.mode.d5; if (!x.mode.d5 && PROP) $('#propBtn').click(); camTo(x.v, false, 1500); S.setMarker && S.setMarker(null);
   }));
   $('#d5Lg').innerHTML = lgHTML([
     ['var(--gate)', 'D5 開口（拉開式大門）', '8 m'],
     ['var(--ink)', '人行道寬（圍籬面 → 緣石）', '5.7 m'],
-    ['var(--issue)', '候車亭（依座椅位置推估）', '約 2.2×4.2 m'],
-    ['var(--issue)', '候車亭南端伸入開口', '約 0.3 m'],
     ['var(--issue)', '公車停靠區 → 與開口前緣重疊', '3×10 m → 3.85 m'],
     ['var(--issue)', '路燈（開口內）→ 開口北緣', '2.05 m'],
     ['var(--issue)', '排水溝蓋（進出車道內）', '2 處'],
-    ['var(--proposal)', '建議：停靠區＋候車亭北移', '≥ 7 m'],
+    ['var(--proposal)', '建議：公車停靠區北移', '≥ 7 m'],
   ]);
   $('#propBtn').addEventListener('click', () => {
     PROP = !PROP; $('#propBtn').classList.toggle('on', PROP); $('#propBtn').textContent = PROP ? '隱藏建議遷移位置' : '顯示建議遷移位置';
     if (S.ok) S.setProposal(PROP);
-    if (CH[cur].id === 'issues') setPins(P.issues());
+    if (CH[cur].id === 'issues' && !$('#d5Box').hidden) setPins(P.issues());
   });
 }
 function setScheme(k) {
@@ -2061,6 +2036,7 @@ function go(i, opts) {
   const lg = $('#legend'); lg.classList.toggle('on', !!c.legend); lg.classList.toggle('ext', !!(c.mode && c.mode.entry));
   if (S.ok) { S.setMode(Object.assign({}, BASE_MODE, c.mode || {}, { scheme: SCHEME })); S.setMarker && S.setMarker(null); }
   if (c.id === 'exc') setExc(c.mode.excStage || 0);
+  if (c.id === 'issues') { $('#d5Box').hidden = true; if (PROP) $('#propBtn').click(); $$('#issueList button').forEach((x) => x.setAttribute('aria-pressed', 'false')); }
   $$('#gateList button, #openList button, #washList button, #officeList button, #xingList button').forEach((x) => x.setAttribute('aria-pressed', 'false'));
   setPins(c.pins ? P[c.pins]() : []);
   userView = false; tour.on = false; $('#resetView').classList.remove('on');
