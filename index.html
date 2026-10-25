@@ -382,8 +382,8 @@ button.lgb.scheme small{line-height:1.45}
       <p class="lede">圍籬型式依 A1-05 定案：<b>0.6 m 混凝土防溢座＋3.0 m 圍籬板片（1.2 mm 浪型鋼板）＋0.6 m 隔音帆布</b>，總高 <b>4.2 m</b>；C-150 立柱 @2.4 m 入土 0.6 m，隔音帆布施作於內側，頂部設警示燈 @4.8 m。臨市民大道、林森北路、北平東路的人行道側加設<b>安全走廊</b>：頂棚架於圍籬板片頂（+3.6 m），寬度配合人行道。</p>
       <div class="figs">
         <div class="fig"><div class="n">4.2<small>m</small></div><div class="l">圍籬總高（防溢座 0.6＋板片 3.0＋帆布 0.6）</div></div>
-        <div class="fig"><div class="n" id="corrLenN">377<small>m</small></div><div class="l">安全走廊（頂棚 +3.6 m）</div></div>
-        <div class="fig"><div class="n" id="lightN">140<small>盞</small></div><div class="l">警示燈 @4.8 m</div></div>
+        <div class="fig"><div class="n" id="corrLenN">359<small>m</small></div><div class="l">安全走廊（頂棚 +3.6 m）</div></div>
+        <div class="fig"><div class="n" id="lightN">137<small>盞</small></div><div class="l">警示燈 @4.8 m</div></div>
       </div>
       <ul class="notes">
         <li class="nt"><b>安全走廊</b>頂棚高 3.6 m（A1-05 ⑥），供通行淨寬 ≥1 m，外側立柱距緣石 0.5 m、@2.4 m，T5 燈具 @5 m；斑馬線落點不設立柱，各大門（D1～D5）上方不設頂棚，車輛進出不受限高。</li>
@@ -564,7 +564,7 @@ button.lgb.scheme small{line-height:1.45}
       <h2>圍籬、大門、取土口、動線，<br><em>一張配置</em>看清楚</h2>
       <p class="lede">施工圍籬界定工區，五處大門分流車輛、材料與人員；六處取土口避開昇降通道與遺構，出土車由 D3 進、D1 出，過地磅與洗車槽後依路線運往臺北港，降低對市民大道、林森北路與北平東路的交通衝擊。</p>
       <div class="figs">
-        <div class="fig"><div class="n">4<small>處</small></div><div class="l">工地大門</div></div>
+        <div class="fig"><div class="n">5<small>處</small></div><div class="l">工地大門 D1～D5</div></div>
         <div class="fig"><div class="n">6<small>處</small></div><div class="l">取土口</div></div>
         <div class="fig"><div class="n">1<small>條</small></div><div class="l">單向出土主動線</div></div>
       </div>
@@ -1633,7 +1633,7 @@ const PINSETS = {
     { p: [WASH[0].x - 6.5, WASH[0].y, 2.2], t: '洗車槽', k: 'ic', ico: 'wash', c: 'var(--wash)' },
     { p: [WASH[1].x + 7.5, WASH[1].y - 6, 2.2], t: '洗車槽', k: 'ic', ico: 'wash', c: 'var(--wash)' },
     { p: [SCALE.x - 6.5, SCALE.y, 2.4], t: '地磅', k: 'ic', ico: 'scale', c: 'var(--scale)' },
-    { p: [OFFICE.x1 - 4, OFFICE.y0 - 6, 1], t: '前進工務所', k: 'ic', ico: 'house', c: 'var(--office)' },
+    { p: [OFFICE.x0 + 8, OFFICE.y0 - 6, 1], t: '前進工務所', k: 'ic', ico: 'house', c: 'var(--office)' },
     { p: [STORE.x0 + 4, STORE.y0 - 5, 1], t: '月台暫置區', k: 'ic', ico: 'rail', c: 'var(--store)' },
   ],
 };
@@ -1641,17 +1641,17 @@ const P = {
   cover: () => PINSETS.gatesD().concat(PINSETS.opensE(), PINSETS.facilities(), [{ p: lineAt((FEAT.tunnel || {}).A, 104, 10.8), t: '華山引道隧道範圍', c: 'var(--tunnel)', k: 'tag' }]),
   roads: () => [
     { p: [50, 30, 9.5], t: '市民大道二段', s: '45 m・高架禁行大貨車', c: 'var(--glass)' },
-    { p: [-47, -76, 0.3], t: '林森北路', s: '25 m・主要入口', c: 'var(--glass)', k: 'tag' },
+    { p: [-62, -77, 0.3], t: '林森北路', s: '25 m・主要入口', c: 'var(--glass)', k: 'tag' },
     { p: [20, -141, 0.3], t: '北平東路', s: '20 m・主要入口', c: 'var(--glass)', k: 'tag' },
     { p: [178, -40, 0.3], t: '華山藝文公園', s: '不得運輸吊運', c: 'var(--green)', k: 'tag' },
     { p: [110, -112, 5], t: '臺鐵通風井', s: '既有交通設施', c: 'var(--conc)' },
   ].concat(PINSETS.gatesD()),
   fence: () => [
-    { p: [133.4, -40, 4.4], t: '安全圍籬 H 4.2 m', s: '防溢座 0.6＋板片 3.0＋隔音帆布 0.6', c: 'var(--fence)' },
+    { p: [133.4, -64, 4.4], t: '安全圍籬 H 4.2 m', s: '防溢座 0.6＋板片 3.0＋隔音帆布 0.6', c: 'var(--fence)' },
     { p: [92, 16.2, 3.9], t: '安全走廊', s: '頂棚 +3.6 m・寬度配合人行道', c: 'var(--conc)' },
     { p: [-27, -88, 3.4], t: '安全走廊', s: '林森北路側', c: 'var(--conc)', k: 'tag' },
-    { p: [42.6, 2, 2.2], t: '乙種移動式圍籬', s: '48 片・圈圍樹保區', c: 'var(--fence)' },
-    { p: [-12, 4, 4.6], t: '樹木移植保護區', s: '樹保區 H 4.5 m', c: 'var(--green)', l: 1 },
+    { p: [34, -10, 2.2], t: '乙種移動式圍籬', s: '48 片・圈圍樹保區', c: 'var(--fence)' },
+    { p: [-16, -2, 4.6], t: '樹木移植保護區', s: '樹保區 H 4.5 m', c: 'var(--green)', l: 1 },
   ],
   gates: () => PINSETS.gatesD().concat([{ p: [GUARD.x + 5, GUARD.y, 4], t: '警衛室', k: 'ic', ico: 'guard', c: 'var(--gate)' }], PINSETS.facilities().filter((p) => p.ico === 'wash')),
   openings: () => OPENINGS.map((o) => ({ p: [o.cx, o.cy, 1.4], t: o.id, s: `${o.w.toFixed(1)} × ${o.d.toFixed(1)} m`, c: '#2F6B3E' })).concat([{ p: [110.4, -49.7, 14.6], t: '長臂抓斗', s: 'パイプクラムシェル 6 部', c: 'var(--warn)', l: 1 }]),
@@ -1763,7 +1763,22 @@ function updatePins() {
     const x0 = base.left + q.x - p.w / 2, x1 = x0 + p.w, y1 = base.top + q.y + (centred ? p.h / 2 : 0), y0 = y1 - p.h;
     const occ = OCC.some((r) => x1 > r.left - M && x0 < r.right + M && y1 > r.top - M && y0 < r.bottom + M);
     p.el.classList.toggle('hide', !q.ok || off || occ);
-    p.el.style.transform = `translate(${q.x.toFixed(1)}px,${q.y.toFixed(1)}px) translate(-50%,${centred ? '-50%' : '-100%'})`;
+    p._b = { x0, x1, y0, y1, q, centred, vis: q.ok && !off && !occ };
+  });
+  // label dodge: icon / tag labels that land on a gate or opening badge (or an earlier label) slide down or up until clear
+  const placed = [], hit = (b) => placed.some((r) => b.x1 > r.x0 + 2 && b.x0 < r.x1 - 2 && b.y1 > r.y0 + 2 && b.y0 < r.y1 - 2);
+  const fixed = (p) => !(p.k === 'ic' || p.k === 'tag');
+  PINS.filter((p) => p._b && p._b.vis && fixed(p)).forEach((p) => placed.push(p._b));
+  PINS.forEach((p) => {
+    const b = p._b; if (!b) return;
+    let dx = 0, dy = 0;
+    if (b.vis && !fixed(p)) {
+      const h = b.y1 - b.y0 + 3, w = (b.x1 - b.x0) / 2 + 6;
+      const C = [[0, 0], [0, h], [0, -h], [w, 0], [-w, 0], [w, h], [-w, h], [w, -h], [-w, -h], [0, 2 * h], [0, -2 * h]];
+      for (const [ex, ey] of C) { const c = { x0: b.x0 + ex, x1: b.x1 + ex, y0: b.y0 + ey, y1: b.y1 + ey }; if (!hit(c)) { dx = ex; dy = ey; break; } }
+      placed.push({ x0: b.x0 + dx, x1: b.x1 + dx, y0: b.y0 + dy, y1: b.y1 + dy });
+    }
+    p.el.style.transform = `translate(${(b.q.x + dx).toFixed(1)}px,${(b.q.y + dy).toFixed(1)}px) translate(-50%,${b.centred ? '-50%' : '-100%'})`;
   });
 }
 
