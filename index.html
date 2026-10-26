@@ -318,6 +318,51 @@ button.lgb.scheme small{line-height:1.45}
 
 .qa *,.qa *::before,.qa *::after{transition:none!important;animation:none!important}
 
+/* ---------------------------------------------------------------- home (meeting cover) */
+#home{position:absolute;inset:0;z-index:30;display:flex;pointer-events:none;
+  background:linear-gradient(90deg,var(--bg) 0,var(--bg) min(640px,54vw),color-mix(in srgb,var(--bg) 60%,transparent) calc(min(640px,54vw) + 120px),transparent calc(min(640px,54vw) + 300px))}
+body:not(.home) #home{display:none}
+body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,body.home #pins,body.home #compass,body.home #resetView,body.home .scrimL{visibility:hidden}
+#home .hm{pointer-events:auto;width:min(640px,54vw);box-sizing:border-box;padding:46px 52px 34px;display:flex;flex-direction:column;gap:22px;overflow:auto}
+.hmTop{display:flex;align-items:center;gap:12px}
+.hmTop .seal{width:38px;height:38px;border:1.5px solid var(--bronze);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:17px;color:var(--bronze)}
+.hmTop span{font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:.12em}
+.hmTop em{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--bg);background:var(--ink);padding:3px 8px}
+.hmEy{margin:10px 0 0;font-size:13px;letter-spacing:.1em;color:var(--bronze);font-weight:600}
+#home h1{margin:-8px 0 0;font-family:var(--serif);font-weight:700;font-size:clamp(26px,2.5vw,36px);line-height:1.38;letter-spacing:.04em;text-wrap:balance}
+.hmMeta{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1.5px solid var(--ink);border-bottom:1px solid var(--rule2)}
+.hmMeta div{display:contents}
+.hmMeta dt,.hmMeta dd{margin:0;padding:10px 0;border-bottom:1px solid var(--rule)}
+.hmMeta div:last-child dt,.hmMeta div:last-child dd{border-bottom:0}
+.hmMeta dt{font-size:12px;letter-spacing:.12em;color:var(--ink3);padding-right:22px;align-self:center}
+.hmMeta dd{font-size:15px;color:var(--ink2)}
+.hmMeta dd b{font-family:var(--num);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.hmCols{display:grid;grid-template-columns:1fr 1.25fr;gap:30px}
+#home h2{margin:0 0 10px;font-size:12px;letter-spacing:.14em;color:var(--ink3);font-weight:600}
+.hmOrg{margin:0;padding:0;list-style:none;counter-reset:o}
+.hmOrg li{counter-increment:o;display:flex;gap:10px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--rule);font-size:15px;font-weight:500}
+.hmOrg li::before{content:counter(o,decimal-leading-zero);font-family:var(--num);font-size:13px;color:var(--bronze);min-width:18px}
+.hmAg{margin:0;padding:0;list-style:none;counter-reset:a}
+.hmAg li{counter-increment:a;border-bottom:1px solid var(--rule)}
+.hmAg button{all:unset;cursor:pointer;display:grid;grid-template-columns:30px 1fr;gap:2px 8px;padding:9px 6px 10px 0;width:100%;box-sizing:border-box}
+.hmAg button::before{content:counter(a,cjk-ideographic) "、";grid-row:span 2;font-family:var(--serif);font-weight:700;color:var(--bronze);font-size:15px}
+.hmAg b{font-size:15px}
+.hmAg span{font-size:12.5px;line-height:1.6;color:var(--ink2)}
+.hmAg button:hover b,.hmAg button:focus-visible b{color:var(--bronze)}
+.hmGo{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+#homeStart{display:inline-flex;align-items:center;gap:10px;border:0;cursor:pointer;background:var(--ink);color:var(--bg);font-size:15px;font-weight:600;letter-spacing:.12em;padding:13px 22px}
+#homeStart svg{width:16px;height:16px}
+#homeStart:hover{background:var(--bronze)}
+.hmGo small{font-size:12px;color:var(--ink3)}
+#mark[role=button]{cursor:pointer}
+@media (max-width:900px){
+  #home{background:var(--bg)}
+  #home .hm{width:100%;padding:26px 20px 24px;gap:18px}
+  .hmCols{grid-template-columns:1fr;gap:18px}
+  #home h1{font-size:24px}
+}
+.hmAg b i{font-style:normal;font-family:var(--num);font-weight:500;font-size:12px;color:var(--ink3);margin-left:8px;letter-spacing:.04em}
+
 </style>
 </head>
 <body>
@@ -330,7 +375,7 @@ button.lgb.scheme small{line-height:1.45}
   <button id="resetView" type="button">回到章節視角</button>
 
   <header id="top">
-    <div id="mark">
+    <div id="mark" role="button" tabindex="0" title="回到主頁">
       <div class="seal" aria-hidden="true">華</div>
       <div class="t"><b>華山司法園區新建工程｜假設工程配置與出土動線</b><span>土方開挖及逆打施工階段・互動簡報</span></div>
       <i>豐譽營造 × 正龍工程</i>
@@ -342,6 +387,38 @@ button.lgb.scheme small{line-height:1.45}
       <button class="tb" id="fs" type="button" title="全螢幕（F）"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/></svg><span class="tl">全螢幕</span></button>
     </div>
   </header>
+
+  <section id="home" aria-labelledby="homeT">
+    <div class="hm">
+      <div class="hmTop"><div class="seal" aria-hidden="true">華</div><span>工地協調會議</span><em>簡報資料</em></div>
+      <p class="hmEy">土方開挖及逆打施工階段・假設工程配置與出土動線</p>
+      <h1 id="homeT">臺灣高等法院及臺灣臺北地方法院<br>遷建華山司法園區新建工程</h1>
+      <dl class="hmMeta">
+        <div><dt>會議日期</dt><dd><b>2026 年 10 月 27 日</b>（星期二）</dd></div>
+        <div><dt>會議名稱</dt><dd>工地協調會議</dd></div>
+      </dl>
+      <div class="hmCols">
+        <div>
+          <h2>與會單位</h2>
+          <ol class="hmOrg">
+            <li>臺灣臺北地方法院</li>
+            <li>內政部國土管理署</li>
+            <li>九典聯合建築師事務所</li>
+            <li>豐譽營造</li>
+            <li>正龍工程</li>
+          </ol>
+        </div>
+        <div>
+          <h2>會議議程</h2>
+          <ol class="hmAg">
+            <li><button type="button" data-go="cover"><b>假設工程配置說明<i>01～11</i></b><span>周邊道路、圍籬、大門、取土口、出土動線、工務所、分階出土、交維與環保</span></button></li>
+            <li><button type="button" data-go="issues"><b>討論議題<i>12</i></b><span>議題一　圍籬型式定案<br>議題二　D5 遺構吊裝搬運動線・公車停靠區遷移</span></button></li>
+          </ol>
+        </div>
+      </div>
+      <div class="hmGo"><button type="button" id="homeStart">開始簡報<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><small>按 Enter 開始・簡報中點左上角「華」可回到主頁</small></div>
+    </div>
+  </section>
 
   <div id="sheet">
   <main id="panel">
@@ -2041,6 +2118,7 @@ const dwell = (c) => c.dwell || (c.id === 'route' ? 16 : c.id === 'exc' ? 15 : 1
 document.addEventListener('keydown', (e) => {
   if (e.altKey || e.metaKey || e.ctrlKey) return;
   if (!lb.hidden) { if (e.key === 'Escape') lbClose(); return; }
+  if (HOME) { if (e.key === 'Enter' && e.target === document.body || e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); setHome(false); go(0, { user: true }); } return; }
   const tag = (e.target && e.target.tagName) || '';
   if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
   const k = e.key;
@@ -2098,7 +2176,8 @@ function frame(now) {
       }
       active = true;
     }
-    if (c.spin && !userView && !camTw.on && !RM) { S.cam.az += c.spin * dt; active = true; }
+    const spin = HOME ? 2.0 : c.spin;
+    if (spin && !userView && !camTw.on && !RM) { S.cam.az += spin * dt; active = true; }
     const anim = S.animate(flowT) && ((ANIM && FLOW) || S.dirty);
     if (active || anim || S.dirty) {
       S.applyCam(); S.render(); updatePins();
@@ -2117,10 +2196,21 @@ function onResize() { PINS.forEach((p) => { p.w = 0; }); if (S.ok) { S.resize();
 window.addEventListener('resize', onResize);
 if (window.ResizeObserver) new ResizeObserver(onResize).observe($('#gl'));
 applyTheme();
+let HOME = false;
+function setHome(on) {
+  HOME = !!on; document.body.classList.toggle('home', HOME);
+  if (HOME) { if (AUTO.on) setAuto(false); go(0, { instant: true }); try { history.replaceState(null, '', location.pathname + location.search); } catch (e) { /* sandboxed */ } $('#homeStart').focus({ preventScroll: true }); }
+  if (S.ok) { S.resize(); updatePins(); }
+}
+$('#homeStart').addEventListener('click', () => { setHome(false); go(0, { user: true }); });
+$$('#home [data-go]').forEach((b) => b.addEventListener('click', () => { setHome(false); go(Math.max(0, CH.findIndex((c) => c.id === b.dataset.go)), { user: true }); }));
+$('#mark').addEventListener('click', () => setHome(true));
+$('#mark').addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setHome(true); } });
 {
   const h = (location.hash || '').replace('#', '');
   const i = CH.findIndex((c) => c.id === h);
   go(i >= 0 ? i : 0, { instant: true });
+  if (i < 0 && !QA) setHome(true);
 }
 requestAnimationFrame(frame);
 (async () => {
