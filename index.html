@@ -665,24 +665,8 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
       <p class="src">依據：貳、一（二）土方開挖及逆打施工階段假設配置及出土動線規劃（圖：取土口 E1～E6、出土動線、洗車台、地磅）。車輛動畫為示意。</p>
     </section>
 
-    <section class="pg" data-s="coverway" style="--c:var(--cover)">
-      <div class="mk"><span>09</span>覆工板便道<em>伍、三</em></div>
-      <h2>便道跨越降版區，<br><em>覆工板</em>架空承載</h2>
-      <p class="lede">主動線與 E5 支線通過櫛型月台遺構降版區，頂層鋪設覆工板並以支撐梁架空承載車行，<b>受力點完全避開遺構本體</b>；周邊以角鋼防護界定行車範圍。</p>
-      <div class="figs">
-        <div class="fig"><div class="n">555<small>片</small></div><div class="l">覆工板（1 m×2 m／3 m）</div></div>
-        <div class="fig"><div class="n">109<small>支</small></div><div class="l">支撐短柱（RHS 250×250）</div></div>
-        <div class="fig"><div class="n">65<small>×</small>20<small>m</small></div><div class="l">覆工板便道範圍</div></div>
-      </div>
-      <ul class="notes">
-        <li class="nt"><b>分層防護</b>覆工鈑架空、集水盤導排水、緩衝材防碰撞，遺構底側鋪防潮防污染層。</li>
-        <li class="nt"><b>禁止堆置</b>重型材料、鋼筋、鋼構與大型機具不得集中堆放於遺構影響範圍。</li>
-      </ul>
-      <p class="src">依據：伍、三 月台遺構保護防汙染（排水）防撞擊；貳、二（六）遺構保存工程界面。數量與範圍依 BIM 模型。</p>
-    </section>
-
     <section class="pg" data-s="wash" style="--c:var(--wash)">
-      <div class="mk"><span>10</span>出場管制<em>貳、一（二）・參、四</em></div>
+      <div class="mk"><span>09</span>出場管制<em>貳、一（二）・參、四</em></div>
       <h2>過<em>地磅</em>、洗車台，<br>再由 D1 出場</h2>
       <p class="lede">主動線出口段設 <b>28 m 地磅</b>，土方車過磅計重後經 D1 洗車台清洗輪胎與車身，旁設警衛貨櫃屋管制進出；D2 亦設洗車台。洗車廢水經沉澱池處理後排放。</p>
       <div class="figs">
@@ -696,6 +680,22 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
       </ul>
       <div class="figbtn"><button class="thumb" type="button" data-fig="wash316"><img alt="" data-src="wash316"><span>洗車台・沉澱池</span></button><button class="thumb" type="button" data-fig="wash324"><img alt="" data-src="wash324"><span>預組式洗車設備</span></button></div>
       <p class="src">依據：參、四 環境維護計畫、交通維持設施；貳、二（一）土方工程（GPS）；伍 創意承諾（AI 運用）。地磅、洗車台、警衛室位置依 BIM 模型。</p>
+    </section>
+
+    <section class="pg" data-s="coverway" style="--c:var(--cover)">
+      <div class="mk"><span>10</span>覆工板便道<em>伍、三</em></div>
+      <h2>便道跨越降版區，<br><em>覆工板</em>架空承載</h2>
+      <p class="lede">主動線與 E5 支線通過櫛型月台遺構降版區，頂層鋪設覆工板並以支撐梁架空承載車行，<b>受力點完全避開遺構本體</b>；周邊以角鋼防護界定行車範圍。</p>
+      <div class="figs">
+        <div class="fig"><div class="n">555<small>片</small></div><div class="l">覆工板（1 m×2 m／3 m）</div></div>
+        <div class="fig"><div class="n">109<small>支</small></div><div class="l">支撐短柱（RHS 250×250）</div></div>
+        <div class="fig"><div class="n">65<small>×</small>20<small>m</small></div><div class="l">覆工板便道範圍</div></div>
+      </div>
+      <ul class="notes">
+        <li class="nt"><b>分層防護</b>覆工鈑架空、集水盤導排水、緩衝材防碰撞，遺構底側鋪防潮防污染層。</li>
+        <li class="nt"><b>禁止堆置</b>重型材料、鋼筋、鋼構與大型機具不得集中堆放於遺構影響範圍。</li>
+      </ul>
+      <p class="src">依據：伍、三 月台遺構保護防汙染（排水）防撞擊；貳、二（六）遺構保存工程界面。數量與範圍依 BIM 模型。</p>
     </section>
 
     <section class="pg" data-s="office" style="--c:var(--office)">
@@ -2065,7 +2065,7 @@ const P = {
   ],
   relHome: () => [
     { p: [-31, -56, 0.6], t: '議題一　機車格塗銷', s: '林森北路 60 格', c: 'var(--erase)' },
-    { p: [-31.1, -91.5, 0.6], t: '議題二　公車停靠區遷移', s: 'D5 前 → 林森北路 × 市民大道口', c: 'var(--issue)' },
+    { p: [-31.1, -91.5, 0.6], t: '議題二　原公車停靠區及路燈遷移', s: 'D5 前 → 林森北路 × 市民大道口', c: 'var(--issue)' },
     { p: [60.6, 18.6, 1.2], t: '議題三　市民大道花臺', s: '影響 D1 出入', c: 'var(--planterI)' },
   ].concat(PINSETS.gatesD().filter((p) => /D1|D4|D5/.test(p.t))),
   relScoot: () => [
@@ -2158,8 +2158,8 @@ const CH = [
   { id: 'openings', rail: '取土口', view: { t: [62, -62, 1], az: 206, el: 52, w: 176 }, side: true, mode: { arrows: false, trucks: false }, pins: 'openings' },
   { id: 'exc', rail: '分階出土', view: { t: [58, -52, -11], az: 214, el: 22, w: 196 }, side: true, mode: { under: true, ghost: 1, arrows: false, trucks: false, ctx: 0, openings: false, excStage: 0 }, pins: 'exc' },
   { id: 'route', rail: '出土動線', view: { t: [57, -57, 1], az: 214, el: 45, w: 212 }, side: true, legend: true, pins: 'route' },
-  { id: 'coverway', rail: '覆工板', view: { t: [54, -63, 1], az: 202, el: 42, w: 104 }, side: true, pins: 'coverway' },
   { id: 'wash', rail: '出場管制', view: { t: [66, -4, 1], az: 212, el: 36, w: 104 }, side: true, pins: 'wash' },
+  { id: 'coverway', rail: '覆工板', view: { t: [54, -63, 1], az: 202, el: 42, w: 104 }, side: true, pins: 'coverway' },
   { id: 'end', rail: '假設配置整合', view: { t: [53, -56, 4], az: 224, el: 33, w: 244 }, legend: true, pins: 'end', spin: 1.2, mode: { tunnel: true } },
 ];
 if (window.__BRIEF) {   // 簡報版: 9 chapters, reusing the full version's views, modes and side panels
@@ -2321,7 +2321,7 @@ $$('#washList button').forEach((b) => b.addEventListener('click', () => { $$('#w
   const REL = [
     { t: '議題一　機車格塗銷', s: '林森北路基地側機車格 60 格', c: 'var(--erase)', ic: '一', v: { t: [-38, -56, 0], az: 270, el: 52, w: 84 }, mode: { scoot: true, d5: false, d1: false, ctx: 0.4 }, pins: 'relScoot', prop: false,
       lg: [['var(--erase)', '機車格塗銷（林森北路）', '60 格'], ['var(--ink)', '範圍（D5 北側 → 林森北路北段）', '約 57 m'], ['var(--gate)', '受影響大門', 'D4、D5']] },
-    { t: '議題二　公車停靠區遷移', s: 'D5 前 → 林森北路 × 市民大道口', c: 'var(--issue)', ic: '二', v: { t: [-44, -52, 0], az: 270, el: 58, w: 120 }, mode: { scoot: false, d5: true, d1: false, ctx: 0.4 }, pins: 'issues', prop: true,
+    { t: '議題二　原公車停靠區及路燈遷移', s: 'D5 前 → 林森北路 × 市民大道口', c: 'var(--issue)', ic: '二', v: { t: [-44, -52, 0], az: 270, el: 58, w: 120 }, mode: { scoot: false, d5: true, d1: false, ctx: 0.4 }, pins: 'issues', prop: true,
       lg: [['var(--issue)', '公車停靠區（現況，D5 前）', '3×10 m'], ['var(--issue)', '與 D5 開口前緣重疊', '3.85 m'], ['var(--issue)', '路燈（開口內）→ 開口北緣', '2.05 m'], ['var(--proposal)', '建議位置：林森北路 × 市民大道口', '北移約 79 m']] },
     { t: '議題三　市民大道花臺', s: '基地外人行道花臺影響 D1 出入', c: 'var(--planterI)', ic: '三', v: { t: [60.6, 16, 1], az: 200, el: 32, w: 38 }, mode: { scoot: false, d5: false, d1: true, ctx: 0.5 }, pins: 'relD1', prop: false,
       lg: [['var(--gate)', 'D1 開口（折疊式大門）', '12 m'], ['var(--issue)', '花臺（含石椅）位於開口前', '約 14 m'], ['var(--issue)', '路燈（開口內）', '1 支'], ['var(--ink)', '人行道寬（圍籬 → 緣石）', '約 6.2 m']] },
