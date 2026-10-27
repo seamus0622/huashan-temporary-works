@@ -464,7 +464,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
           <h2>會議議程</h2>
           <ol class="hmAg">
             <li><button type="button" data-go="issues"><b>睿森營造介面協調<i>01</i></b><span>議題一　既有圍籬及防溢座拆除及運棄<br>議題二　遺構吊裝進出動線討論</span></button></li>
-            <li><button type="button" data-go="fence"><b>假設工程配置說明<i>02～13</i></b><span>圍籬、既有設施遷移、工務所、大門、取土口、出土動線、分階出土、交維與環保</span></button></li>
+            <li><button type="button" data-go="fence"><b>假設工程配置說明<i>02～13</i></b><span>圍籬、既有設施遷移、工務所設置、大門、取土口、出土動線、分階出土、交維與環保</span></button></li>
           </ol>
         </div>
       </div>
@@ -701,20 +701,14 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </section>
 
     <section class="pg" data-s="office" style="--c:var(--office)">
-      <div class="mk"><span>04</span>工務所與華山引道<em>貳、一（二）・A1-02</em></div>
-      <h2>前進工務所退縮於<br><em>華山引道</em>範圍線北側</h2>
-      <p class="lede">基地南側地下有<b>華山引道隧道</b>通過，A1-02 施工說明規定<b>引道上方不得堆放設備、材料等重物</b>。前進工務所採三層組合屋 <b>5K×9K＋3K×7K</b>，南緣沿隧道範圍線退縮；若改為兩棟 5K×9K，東棟將壓到隧道範圍。</p>
+      <div class="mk"><span>04</span>工務所設置<em>A1-02</em></div>
+      <h2>工務所設置</h2>
+      <p class="lede">基地南側地下有<b>華山引道隧道</b>通過，工務所放置位置如圖，採<b>三層組合屋共 198 坪</b>，待月台遺構拆除後增設第二階段工務所。</p>
       <div class="figs">
         <div class="fig"><div class="n">5<small>m</small></div><div class="l">工務所西棟北側至連續壁外緣</div></div>
         <div class="fig"><div class="n"><span id="ofArea">—</span><small>m²</small></div><div class="l">方案二東棟壓到隧道範圍（最深 <span id="ofDepth">—</span> m）</div></div>
         <div class="fig"><div class="n">2<small>條</small></div><div class="l">華山引道軌道中心線</div></div>
       </div>
-      <ul class="notes">
-        <li class="nt"><b>方案比較</b>右側切換方案一（5K×9K＋3K×7K）與方案二（5K×9K 兩棟）；青色量體為華山引道隧道範圍（藍色為軌道中心線），紅色量體為壓到範圍的部分。</li>
-        <li class="nt"><b>南側一跨</b>連續壁內緣至 J 軸柱心 8.7 m。1F 起始的 <b>SC21 鋼柱底座 7 處</b>沿南側連續壁 @5.5 m 排列：柱底板 PL40 600×600、12-M32 錨栓、5 cm 無收縮砂漿。本階段僅示底座，BOX 400 鋼柱於上構階段吊裝（S1-007、S3-208 詳圖 4、4A）。</li>
-        <li class="nt"><b>月台暫置區</b>西南角鋼構暫置架存放移設前的櫛型月台構件。</li>
-      </ul>
-      <p class="src">依據：A1-02 假設工程平面圖（華山引道隧道範圍線、軌道中心線-華山引道；施工說明「引道上方不得堆放設備、材料等」）；S1-007 一層結構平面圖、S3-208 鋼構接合詳圖(三)（SC21 鋼柱位置與柱底接合）；貳、一（二）各施工階段假設配置。工務所、連續壁位置依 BIM 模型量測。</p>
     </section>
 
     <section class="pg" data-s="exc" style="--c:var(--soil)">
@@ -828,8 +822,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
       <div id="washList"></div>
     </div>
     <div class="sd" data-for="office">
-      <h3>工務所方案<em>點選切換</em></h3>
-      <div id="schemeList"></div>
+      <div id="schemeList" hidden></div>
       <h3>距離與範圍<em>BIM 量測</em></h3>
       <ul class="lg" id="officeDist"></ul>
       <h3>場內設施<em>點選定位</em></h3>
@@ -1991,8 +1984,8 @@ const P = {
     const list = [
       { p: [21.8, -104.3, 1.6], t: '5 m', s: '至連續壁', c: 'var(--ink)', k: 'dim' },
       B ? { p: [52.6, -100.4, 1.6], t: '12.99 m', s: '至連續壁', c: 'var(--ink)', k: 'dim' } : { p: [50.8, -100.6, 1.6], t: '13.43 m', s: '至連續壁', c: 'var(--ink)', k: 'dim' },
-      { p: [27.3, -111.4, 10.4], t: '5K×9K', s: '既有・三層', c: 'var(--office)', k: 'tag' },
-      B ? { p: [47.15, -111.4, 10.4], t: '5K×9K', s: '方案二・東棟', c: 'var(--conflict)', k: 'tag' } : { p: [45.4, -110.0, 10.4], t: '3K×7K', s: '方案一・東棟', c: 'var(--office)', k: 'tag' },
+      { p: [27.3, -111.4, 10.4], t: '5K×9K', s: '西棟・三層', c: 'var(--office)', k: 'tag' },
+      B ? { p: [47.15, -111.4, 10.4], t: '5K×9K', s: '方案二・東棟', c: 'var(--conflict)', k: 'tag' } : { p: [45.4, -110.0, 10.4], t: '3K×7K', s: '東棟・三層', c: 'var(--office)', k: 'tag' },
       { p: lineAt(TN.A, 2, 0.4), t: '華山引道隧道範圍線', c: 'var(--tunnel)', k: 'tag' },
       { p: lineAt(TN.B, 64, 0.4), t: '軌道中心線-華山引道', c: 'var(--railLine)', k: 'tag' },
       { p: [30.2, -101.2, 1.4], t: '連續壁外緣', c: 'var(--conc)', k: 'tag' },
@@ -2153,7 +2146,7 @@ const CH = [
   { id: 'issues', rail: '介面協調', view: { t: [50, -57, 0], az: 202, el: 47, w: 244 }, side: true, mode: { arrows: false, trucks: false, openings: false }, pins: 'issuesHome' },
   { id: 'fence', rail: '圍籬', view: { t: [50, -56, 0], az: 228, el: 34, w: 236 }, side: true, mode: { ghost: 1, arrows: false, trucks: false }, pins: 'fence' },
   { id: 'roads', rail: '既有設施遷移', view: { t: [12, -40, 0], az: 222, el: 50, w: 210 }, side: true, mode: { trucks: false }, pins: 'relHome' },
-  { id: 'office', rail: '工務所', view: { t: [37, -110, 2], az: 20, el: 56, w: 80 }, side: true, mode: { ghost: 1, arrows: false, trucks: false, ctx: 0.3, tunnel: true, dims: true, openings: false }, pins: 'office' },
+  { id: 'office', rail: '工務所設置', view: { t: [37, -110, 2], az: 20, el: 56, w: 80 }, side: true, mode: { ghost: 1, arrows: false, trucks: false, ctx: 0.3, tunnel: true, dims: true, openings: false }, pins: 'office' },
   { id: 'gates', rail: '大門', view: { t: [50, -57, 0], az: 202, el: 47, w: 244 }, side: true, mode: { ghost: 1 }, pins: 'gates' },
   { id: 'openings', rail: '取土口', view: { t: [62, -62, 1], az: 206, el: 52, w: 176 }, side: true, mode: { arrows: false, trucks: false }, pins: 'openings' },
   { id: 'route', rail: '出土動線', view: { t: [57, -57, 1], az: 214, el: 45, w: 212 }, side: true, legend: true, pins: 'route' },
@@ -2300,7 +2293,7 @@ $$('#washList button').forEach((b) => b.addEventListener('click', () => { $$('#w
 }
 {
   const TN = FEAT.tunnel || {}, O = TN.office || {};
-  $('#officeDist').innerHTML = lgHTML([['var(--ink)', '西棟北側 → 連續壁外緣', '5 m'], ['var(--ink)', '東棟北側 → 連續壁外緣', '13.43 m'], ['var(--conflict)', '方案二東棟 → 連續壁外緣', '12.99 m'], ['var(--ink)', '南側連續壁內緣 → J 軸柱心', '8.7 m'], ['var(--steel)', 'SC21 柱底座中心 → J 軸柱心', '7.7 m'], ['var(--tunnel)', '華山引道範圍（基地內）', `${fmtN(Math.round(TN.zoneArea || 0))} m²`]]);
+  $('#officeDist').innerHTML = lgHTML([['var(--ink)', '西棟北側 → 連續壁外緣', '5 m'], ['var(--ink)', '東棟北側 → 連續壁外緣', '13.43 m'], ['var(--ink)', '南側連續壁內緣 → J 軸柱心', '8.7 m'], ['var(--steel)', 'SC21 柱底座中心 → J 軸柱心', '7.7 m'], ['var(--tunnel)', '華山引道範圍（基地內）', `${fmtN(Math.round(TN.zoneArea || 0))} m²`]]);
   if (O.E5x9) { $('#ofArea').textContent = O.E5x9.area; $('#ofDepth').textContent = O.E5x9.depth; }
 }
 {
