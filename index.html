@@ -464,7 +464,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
           <h2>會議議程</h2>
           <ol class="hmAg">
             <li><button type="button" data-go="issues"><b>睿森營造介面協調<i>01</i></b><span>議題一　既有圍籬及防溢座拆除及運棄<br>議題二　遺構吊裝進出動線討論</span></button></li>
-            <li><button type="button" data-go="fence"><b>假設工程配置說明<i>02～13</i></b><span>圍籬、既有設施遷移、工務所設置、大門、取土口、出土動線、分階出土、交維與環保</span></button></li>
+            <li><button type="button" data-go="fence"><b>假設工程配置說明<i>02～11</i></b><span>圍籬、既有設施遷移、工務所設置、大門、取土口、分階出土、出土動線、覆工板、出場管制、假設配置整合</span></button></li>
           </ol>
         </div>
       </div>
@@ -650,7 +650,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </section>
 
     <section class="pg" data-s="route" style="--c:var(--route)">
-      <div class="mk"><span>07</span>出土動線<em>貳、一（二）</em></div>
+      <div class="mk"><span>08</span>出土動線<em>貳、一（二）</em></div>
       <h2>單向<em>出土動線</em>：<br>北平東路進、市民大道出</h2>
       <p class="lede">土方車由南側 <b>D3</b> 進場，沿基地中央施工便道北行，經覆工板便道跨越遺構降版區；於各取土口裝載後匯入主動線，過<b>地磅</b>、<b>洗車台</b>後由北側 <b>D1</b> 出場，<b>右轉</b>市民大道平面道路東行。</p>
       <div class="figs">
@@ -668,7 +668,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </section>
 
     <section class="pg" data-s="coverway" style="--c:var(--cover)">
-      <div class="mk"><span>08</span>覆工板便道<em>伍、三</em></div>
+      <div class="mk"><span>09</span>覆工板便道<em>伍、三</em></div>
       <h2>便道跨越降版區，<br><em>覆工板</em>架空承載</h2>
       <p class="lede">主動線與 E5 支線通過櫛型月台遺構降版區，頂層鋪設覆工板並以支撐梁架空承載車行，<b>受力點完全避開遺構本體</b>；周邊以角鋼防護界定行車範圍。</p>
       <div class="figs">
@@ -684,7 +684,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </section>
 
     <section class="pg" data-s="wash" style="--c:var(--wash)">
-      <div class="mk"><span>09</span>出場管制<em>貳、一（二）・參、四</em></div>
+      <div class="mk"><span>10</span>出場管制<em>貳、一（二）・參、四</em></div>
       <h2>過<em>地磅</em>、洗車台，<br>再由 D1 出場</h2>
       <p class="lede">主動線出口段設 <b>28 m 地磅</b>，土方車過磅計重後經 D1 洗車台清洗輪胎與車身，旁設警衛貨櫃屋管制進出；D2 亦設洗車台。洗車廢水經沉澱池處理後排放。</p>
       <div class="figs">
@@ -712,7 +712,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </section>
 
     <section class="pg" data-s="exc" style="--c:var(--soil)">
-      <div class="mk"><span>10</span>逆打分階出土<em>貳、二（一）</em></div>
+      <div class="mk"><span>07</span>逆打分階出土<em>貳、二（一）</em></div>
       <h2>逆打<em>六階</em>開挖，<br>由取土口垂直出土</h2>
       <p class="lede">逆打開挖分六階（GL−2.5 → −22 m），各階土方由取土口以長臂抓斗吊出，經出土動線運離；北側機車道另分兩階開挖至 −5.4 m。拖曳右側滑桿可逐階檢視開挖量體。</p>
       <div class="figs">
@@ -767,7 +767,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </section>
 
     <section class="pg" data-s="end" style="--c:var(--route)">
-      <div class="mk"><span>13</span>總覽</div>
+      <div class="mk"><span>11</span>假設配置整合</div>
       <h2>圍籬、大門、取土口、動線，<br><em>一張配置</em>看清楚</h2>
       <p class="lede">施工圍籬界定工區，五處大門分流車輛、材料與人員；六處取土口避開昇降通道與遺構，出土車由 D3 進、D1 出，過地磅與洗車台後依路線運往臺北港，降低對市民大道、林森北路與北平東路的交通衝擊。</p>
       <div class="figs">
@@ -1678,6 +1678,11 @@ function initScene() {
     const SC = FEAT.sc21 || { dwallIn: -100.65, gridJ: -91.95 };
     secGroup.add(dimNS(9.0, SC.dwallIn, SC.gridJ));
     secGroup.add(dimNS(9.0, -101.85, -105.47));
+    // lengths along the access (user, 10/27): ramp, slab edge → crane pad (line inside the wall), D5 fence → wall outer face (line outside the wall)
+    secGroup.add(dimAB([-23.0, -99.9], [-11.7, -99.9], 1.45));
+    secGroup.add(dimAB([-11.7, -99.9], [-5.4, -99.9], 1.45));
+    secGroup.add(dimAB([-23.4, -102.6], [-12.9, -102.6], 1.45));
+    secGroup.add(dimAB([-12.9, -102.6], [9.0, -102.6], 1.45));
   }
   S.setProposal = (on) => { propGroup.visible = !!on; S.dirty = true; };
 
@@ -2055,6 +2060,10 @@ const P = {
     { p: [-34.2, -116, 0.6], t: '輪吊進場動線', s: '林森北路 → D5 → 坡道 → 1F 樓版', c: 'var(--craneR)' },
     { p: [9.0, -96.3, 1.6], t: '8.7 m', s: '連續壁內緣至 J 軸', c: 'var(--ink)', k: 'dim' },
     { p: [9.0, -103.66, 1.6], t: '3.6 m', s: '連續壁外緣至月台暫置區', c: 'var(--ink)', k: 'dim' },
+    { p: [-17.35, -97.7, 1.6], t: '11.3 m', s: '臨時坡道', c: 'var(--ink)', k: 'dim' },
+    { p: [-8.55, -97.7, 1.6], t: '6.3 m', s: '樓版邊至外伸腳', c: 'var(--ink)', k: 'dim' },
+    { p: [-18.15, -104.6, 1.6], t: '10.5 m', s: 'D5 圍籬至連續壁外緣', c: 'var(--ink)', k: 'dim' },
+    { p: [-1.95, -104.6, 1.6], t: '21.9 m', s: '連續壁外緣沿線', c: 'var(--ink)', k: 'dim' },
   ],
   relHome: () => [
     { p: [-31, -56, 0.6], t: '議題一　機車格塗銷', s: '林森北路 60 格', c: 'var(--erase)' },
@@ -2149,13 +2158,11 @@ const CH = [
   { id: 'office', rail: '工務所設置', view: { t: [37, -110, 2], az: 20, el: 56, w: 80 }, side: true, mode: { ghost: 1, arrows: false, trucks: false, ctx: 0.3, tunnel: true, dims: true, openings: false }, pins: 'office' },
   { id: 'gates', rail: '大門', view: { t: [50, -57, 0], az: 202, el: 47, w: 244 }, side: true, mode: { ghost: 1 }, pins: 'gates' },
   { id: 'openings', rail: '取土口', view: { t: [62, -62, 1], az: 206, el: 52, w: 176 }, side: true, mode: { arrows: false, trucks: false }, pins: 'openings' },
+  { id: 'exc', rail: '分階出土', view: { t: [58, -52, -11], az: 214, el: 22, w: 196 }, side: true, mode: { under: true, ghost: 1, arrows: false, trucks: false, ctx: 0, openings: false, excStage: 0 }, pins: 'exc' },
   { id: 'route', rail: '出土動線', view: { t: [57, -57, 1], az: 214, el: 45, w: 212 }, side: true, legend: true, pins: 'route' },
   { id: 'coverway', rail: '覆工板', view: { t: [54, -63, 1], az: 202, el: 42, w: 104 }, side: true, pins: 'coverway' },
   { id: 'wash', rail: '出場管制', view: { t: [66, -4, 1], az: 212, el: 36, w: 104 }, side: true, pins: 'wash' },
-  { id: 'exc', rail: '分階出土', view: { t: [58, -52, -11], az: 214, el: 22, w: 196 }, side: true, mode: { under: true, ghost: 1, arrows: false, trucks: false, ctx: 0, openings: false, excStage: 0 }, pins: 'exc' },
-  { id: 'traffic', rail: '交通維持', view: { t: [30, -60, 0], az: 186, el: 64, w: 420 }, side: true, legend: true, mode: { ext: true, entry: true }, pins: 'traffic' },
-  { id: 'env', rail: '環境維護', view: { t: [56, -12, 1], az: 206, el: 40, w: 160 }, side: true, pins: 'env' },
-  { id: 'end', rail: '總覽', view: { t: [53, -56, 4], az: 224, el: 33, w: 244 }, legend: true, pins: 'end', spin: 1.2, mode: { tunnel: true } },
+  { id: 'end', rail: '假設配置整合', view: { t: [53, -56, 4], az: 224, el: 33, w: 244 }, legend: true, pins: 'end', spin: 1.2, mode: { tunnel: true } },
 ];
 if (window.__BRIEF) {   // 簡報版: 9 chapters, reusing the full version's views, modes and side panels
   const pick = (id, o) => Object.assign({}, CH.find((c) => c.id === id), o || {});
