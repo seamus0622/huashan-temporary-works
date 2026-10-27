@@ -582,16 +582,6 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
       <div class="mk"><span>03</span>既有設施遷移<em>A1-01・現況</em></div>
       <h2>出入口前<em>既有設施</em>遷移</h2>
       <p class="lede">大門前的路邊設施會影響工程車進出，提出三項議題，右側點選即可定位：<br><b>議題一　林森北路機車格塗銷</b><br><b>議題二　公車停靠區遷移至林森北路 × 市民大道口</b><br><b>議題三　市民大道人行道花臺影響 D1 出入</b></p>
-      <div class="figs">
-        <div class="fig"><div class="n">60<small>格</small></div><div class="l">機車格塗銷（林森北路）</div></div>
-        <div class="fig"><div class="n">79<small>m</small></div><div class="l">公車停靠區北移至路口</div></div>
-        <div class="fig"><div class="n">14<small>m</small></div><div class="l">D1 前花臺（含石椅）</div></div>
-      </div>
-      <ul class="notes">
-        <li class="nt"><b>議題一</b>林森北路基地側機車格（D5 北側至林森北路北段，約 57 m，60 格）塗銷，維持 D4、D5 進出與臨停空間。</li>
-        <li class="nt"><b>議題二</b>D5 前公車停靠區（3×10 m）與開口重疊 3.85 m，建議移至林森北路 × 市民大道口；開口內路燈遷出、溝蓋改重型。站位遷移洽公共運輸處。</li>
-        <li class="nt"><b>議題三</b>市民大道基地外人行道沿緣石設花臺與石椅，D1 開口前約 14 m 及 1 支路燈影響土方車出場，需討論拆除或遷移及復原方式。</li>
-      </ul>
       <div class="figbtn"><button class="thumb" type="button" data-fig="planterD1"><img alt="" data-src="planterD1"><span>市民大道人行道現況</span></button><button class="thumb" type="button" data-fig="access91"><img alt="" data-src="access91"><span>出入口設施遷移</span></button><button class="thumb" type="button" data-fig="site90"><img alt="" data-src="site90"><span>基地現況</span></button></div>
       <p class="src">依據：A1-01 現況測量圖（0-parking 機車格、公車停靠區；97334 花圃、石椅、路燈）；現況照片。路幅：市民大道 45 m、林森北路 25 m、北平東路 20 m。</p>
     </section>
@@ -1225,13 +1215,13 @@ function initScene() {
       [boxG(0, 1, 0, 0.015, B0, TOP), plateM],
       [boxG(0, 1, -0.2, 0.1, 0, B0), footM],
       [rails([B0 + 0.2, B0 + 1.7, B0 + 3.2, TOP - 0.245]), steelM],
-      [boxG(0, 1, -0.03, -0.02, TOP - 0.6, TOP - 0.02), canvasM],
+      [boxG(0, 1, -0.178, -0.168, TOP - 0.6, TOP + 0.005), canvasM]   // inside the posts so it hides the steel frame,
     ];
     const corr = [
       [boxG(0, 1, 0, 0.015, B0, B0 + 3.0), plateM],
       [boxG(0, 1, -0.2, 0.1, 0, B0), footM],
       [rails([B0 + 0.2, B0 + 1.48, B0 + 2.755, TOP - 0.045]), steelM],
-      [boxG(0, 1, -0.03, -0.02, B0 + 3.0, TOP - 0.02), canvasM],
+      [boxG(0, 1, -0.178, -0.168, B0 + 3.0, TOP + 0.005), canvasM],
     ];
     const add = (list, defs) => { if (!list.length) return; defs.forEach(([g, m]) => { const im = new T.InstancedMesh(g, m, list.length); list.forEach((p, i) => setPanel(im, i, p)); im.frustumCulled = false; im.castShadow = true; im.receiveShadow = true; grp.add(im); }); };
     add(FD.panels.filter((p) => !p[7]), plain);
