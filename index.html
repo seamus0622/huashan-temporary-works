@@ -364,6 +364,45 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
 }
 .hmAg b i{font-style:normal;font-family:var(--num);font-weight:500;font-size:12px;color:var(--ink3);margin-left:8px;letter-spacing:.04em}
 
+/* ---------------------------------------------------------------- section A–A card */
+#secCard{position:absolute;z-index:16;left:calc(var(--panelW) + 34px);right:24px;bottom:calc(var(--railH) + 12px);
+  background:var(--sheet);border:1px solid var(--rule2);box-shadow:0 6px 24px rgba(0,0,0,.14);padding:10px 14px 8px;box-sizing:border-box}
+#secCard .sch{display:flex;align-items:baseline;gap:10px;margin-bottom:2px}
+#secCard .sch b{font-family:var(--serif);font-size:15px}
+#secCard .sch span{font-size:12px;color:var(--ink2);flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#secClose{margin-left:auto;border:0;background:none;font-size:20px;line-height:1;cursor:pointer;color:var(--ink3);padding:0 2px}
+.secsvg{display:block;width:100%;height:auto;max-height:44vh;font-family:var(--sans)}
+.sx-grid{stroke:var(--rule);stroke-width:.8}
+.sx-ax{fill:var(--ink3);font-size:10px;font-family:var(--num)}
+.sx-dim{stroke:var(--ink2);stroke-width:1}
+.sx-zt{fill:var(--ink);font-size:11.5px;font-weight:600}
+.sx-ref{stroke:var(--ink3);stroke-width:.8;stroke-dasharray:3 3}
+.sx-rt{fill:var(--ink2);font-size:10.5px}
+.sx-st{fill:url(#hatchS);stroke:var(--ink);stroke-width:1}
+.sx-hatch{stroke:var(--ink3);stroke-width:1.2}
+.sx-stl{fill:none;stroke:var(--ink);stroke-width:2}
+.sx-ex{fill:none;stroke:var(--soil);stroke-width:2;stroke-dasharray:6 3}
+.sx-exd{fill:var(--soil)}
+.sx-ls{fill:none;stroke:var(--green);stroke-width:2.6}
+.sx-lst{fill:var(--ink);font-size:11px;font-weight:600}
+.sx-lls{fill:var(--green);font-size:11px;font-weight:600}
+.sx-lex{fill:var(--soil);font-size:10.5px}
+.sx-key{stroke:var(--route);stroke-width:1.6}
+.sx-keyd{stroke:var(--route);stroke-width:.8;stroke-dasharray:2 3}
+.sx-keyt{fill:var(--route);font-size:14px;font-weight:700;font-family:var(--num)}
+.sx-keys{fill:var(--route);font-size:10.5px}
+.sx-mark{fill:var(--ink);font-size:13px;font-weight:700;font-family:var(--serif)}
+.seclg{display:flex;gap:18px;list-style:none;margin:2px 0 0;padding:0;font-size:12px}
+.seclg li{display:flex;align-items:center;gap:6px}
+.seclg i{display:inline-block;width:22px;height:0;border-top:2.6px solid}
+.seclg .ex i{border-top:2px dashed var(--soil)} .seclg .st i{border-color:var(--ink)} .seclg .ls i{border-color:var(--green)}
+.seclg small{color:var(--ink3);font-size:10.5px}
+.sx-chk{fill:none;stroke:var(--issue);stroke-width:1.3;stroke-dasharray:4 3}
+.sx-chkt{fill:var(--issue);font-size:11px;font-weight:700}
+.secn{margin:3px 0 0;font-size:10.5px;color:var(--ink3)}
+@media (max-width:900px){ #secCard{left:6px;right:6px;top:calc(var(--topH) + 4px);bottom:auto;padding:6px 8px;z-index:25} #secCard .sch span,.secn{display:none} .secsvg{max-height:none} .seclg{gap:10px;font-size:11px} .seclg small{display:none} }
+.secw{color:var(--issue)}
+
 </style>
 </head>
 <body>
@@ -420,6 +459,93 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     </div>
   </section>
 
+  <section id="secCard" hidden aria-label="剖面 A–A">
+    <div class="sch"><b>剖面 A–A</b><span>林森北路 → D5 → 1F 樓版（遺構吊裝進出動線）</span><button type="button" id="secClose" aria-label="關閉剖面">×</button></div>
+    <svg viewBox="0 0 917 350" class="secsvg" role="img" aria-label="剖面 A–A：林森北路經 D5 至 1F 樓版之現況、結構、景觀高程">
+<defs><pattern id="hatchS" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="sx-hatch"/></pattern></defs>
+<line x1="46" x2="890.8" y1="276.0" y2="276.0" class="sx-grid"/>
+<text x="40" y="279.5" class="sx-ax" text-anchor="end">3.5</text>
+<line x1="46" x2="890.8" y1="236.4" y2="236.4" class="sx-grid"/>
+<text x="40" y="239.9" class="sx-ax" text-anchor="end">4.0</text>
+<line x1="46" x2="890.8" y1="196.8" y2="196.8" class="sx-grid"/>
+<text x="40" y="200.3" class="sx-ax" text-anchor="end">4.5</text>
+<line x1="46" x2="890.8" y1="157.2" y2="157.2" class="sx-grid"/>
+<text x="40" y="160.7" class="sx-ax" text-anchor="end">5.0</text>
+<line x1="46" x2="890.8" y1="117.6" y2="117.6" class="sx-grid"/>
+<text x="40" y="121.1" class="sx-ax" text-anchor="end">5.5</text>
+<line x1="46" x2="890.8" y1="78.0" y2="78.0" class="sx-grid"/>
+<text x="40" y="81.5" class="sx-ax" text-anchor="end">6.0</text>
+<text x="40" y="64" class="sx-ax" text-anchor="end">EL (m)</text>
+<line x1="189.9" x2="890.8" y1="30" y2="30" class="sx-dim"/>
+<line x1="189.9" x2="189.9" y1="25" y2="35" class="sx-dim"/>
+<line x1="265.1" x2="265.1" y1="25" y2="35" class="sx-dim"/>
+<text x="227.5" y="23" class="sx-zt" text-anchor="middle">人行道 5.7 m</text>
+<line x1="265.1" x2="265.1" y1="25" y2="35" class="sx-dim"/>
+<line x1="403.7" x2="403.7" y1="25" y2="35" class="sx-dim"/>
+<text x="334.4" y="23" class="sx-zt" text-anchor="middle">圍籬 → 連續壁 10.5 m</text>
+<line x1="403.7" x2="403.7" y1="25" y2="35" class="sx-dim"/>
+<line x1="419.6" x2="419.6" y1="25" y2="35" class="sx-dim"/>
+<line x1="419.6" x2="419.6" y1="25" y2="35" class="sx-dim"/>
+<line x1="864.4" x2="864.4" y1="25" y2="35" class="sx-dim"/>
+<text x="642.0" y="23" class="sx-zt" text-anchor="middle">1F 樓版（逆打，結構完成）</text>
+<line x1="864.4" x2="864.4" y1="25" y2="35" class="sx-dim"/>
+<line x1="890.8" x2="890.8" y1="25" y2="35" class="sx-dim"/>
+<text x="118.6" y="23" class="sx-zt" text-anchor="middle">林森北路（路寬 25 m）</text>
+<line x1="189.9" x2="189.9" y1="38" y2="291.8" class="sx-ref"/>
+<text x="192.9" y="49" class="sx-rt">緣石</text>
+<line x1="265.1" x2="265.1" y1="38" y2="291.8" class="sx-ref"/>
+<text x="268.1" y="49" class="sx-rt">D5 大門（8 m）</text>
+<line x1="411.6" x2="411.6" y1="38" y2="291.8" class="sx-ref"/>
+<text x="414.6" y="49" class="sx-rt">連續壁</text>
+<rect x="403.7" y="196.8" width="15.8" height="95.0" class="sx-st"/>
+<rect x="419.6" y="121.5" width="444.8" height="15.8" class="sx-st"/>
+<rect x="864.4" y="196.8" width="26.4" height="15.8" class="sx-st"/>
+<polyline points="403.7,291.8 403.7,196.8 419.6,196.8 419.6,121.5 864.4,121.5 864.4,196.8 890.8,196.8" class="sx-stl"/>
+<polyline points="95.3,237.2 96.3,237.2 192.2,245.9 194.8,233.2 247.8,230.0 284.5,224.5 338.9,225.3 372.0,225.3 372.0,180.9 439.2,178.5 480.9,173.0 520.1,178.5 572.5,178.5 646.6,177.8 684.3,174.6 726.5,177.0 837.4,173.0 850.7,175.4 876.7,162.7 900.4,174.6" class="sx-ex"/>
+<circle cx="95.3" cy="237.2" r="2.2" class="sx-exd"/>
+<circle cx="96.3" cy="237.2" r="2.2" class="sx-exd"/>
+<circle cx="192.2" cy="245.9" r="2.2" class="sx-exd"/>
+<circle cx="194.8" cy="233.2" r="2.2" class="sx-exd"/>
+<circle cx="247.8" cy="230.0" r="2.2" class="sx-exd"/>
+<circle cx="284.5" cy="224.5" r="2.2" class="sx-exd"/>
+<circle cx="338.9" cy="225.3" r="2.2" class="sx-exd"/>
+<circle cx="439.2" cy="178.5" r="2.2" class="sx-exd"/>
+<circle cx="480.9" cy="173.0" r="2.2" class="sx-exd"/>
+<circle cx="520.1" cy="178.5" r="2.2" class="sx-exd"/>
+<circle cx="572.5" cy="178.5" r="2.2" class="sx-exd"/>
+<circle cx="646.6" cy="177.8" r="2.2" class="sx-exd"/>
+<circle cx="684.3" cy="174.6" r="2.2" class="sx-exd"/>
+<circle cx="726.5" cy="177.0" r="2.2" class="sx-exd"/>
+<circle cx="837.4" cy="173.0" r="2.2" class="sx-exd"/>
+<circle cx="850.7" cy="175.4" r="2.2" class="sx-exd"/>
+<circle cx="876.7" cy="162.7" r="2.2" class="sx-exd"/>
+<circle cx="900.4" cy="174.6" r="2.2" class="sx-exd"/>
+<polyline points="46.0,237.2 187.9,245.9 189.9,234.0 356.2,204.7 488.2,121.5 890.8,121.5" class="sx-ls"/>
+<text x="560.8" y="112.5" class="sx-lst" text-anchor="middle">EL 5.45（+95）1F 樓版頂</text>
+<text x="398.7" y="256.2" class="sx-lst" text-anchor="end">連續壁頂 EL 4.50（±0）</text>
+<text x="877.6" y="210.8" class="sx-lst" text-anchor="middle">EL 4.50</text>
+<text x="185.9" y="225.0" class="sx-lls" text-anchor="end">TC 4.03／BC 3.88</text>
+<text x="329.8" y="199.2" class="sx-lls" text-anchor="end">FFL 4.40（−10）</text>
+<text x="423.5" y="151.5" class="sx-lls" text-anchor="middle">1:9 坡道</text>
+<text x="96.2" y="251.2" class="sx-lex" text-anchor="middle">3.99</text>
+<text x="192.5" y="259.9" class="sx-lex" text-anchor="middle">3.88</text>
+<text x="310.0" y="238.5" class="sx-lex" text-anchor="middle">4.14～4.15</text>
+<text x="367.0" y="174.9" class="sx-lex" text-anchor="end">現況高差約 0.6 m</text>
+<text x="626.8" y="192.8" class="sx-lex" text-anchor="middle">4.71～4.80（現況地坪）</text>
+<rect x="403.7" y="109.6" width="84.5" height="67.3" class="sx-chk"/>
+<text x="446.0" y="105.6" class="sx-chkt" text-anchor="middle">待確認</text>
+<line x1="752.2" x2="752.2" y1="121.5" y2="237.2" class="sx-key"/>
+<line x1="747.2" x2="757.2" y1="237.2" y2="237.2" class="sx-key"/>
+<line x1="46.0" x2="757.2" y1="237.2" y2="237.2" class="sx-keyd"/>
+<text x="758.2" y="183.3" class="sx-keyt" text-anchor="start">1.46 m</text>
+<text x="758.2" y="197.3" class="sx-keys" text-anchor="start">路面 → 樓版</text>
+<text x="53.9" y="313.8" class="sx-mark" text-anchor="middle">A</text>
+<text x="882.9" y="313.8" class="sx-mark" text-anchor="middle">A′</text>
+<text x="468.4" y="313.8" class="sx-ax" text-anchor="middle">垂直比例放大 6 倍</text>
+</svg>
+<ul class="seclg"><li class="ex"><i></i>現況高程<small>A1-01 測量</small></li><li class="st"><i></i>結構高程<small>結構 BIM</small></li><li class="ls"><i></i>景觀高程<small>LA-10 景觀高程系統</small></li></ul>
+    <p class="secn">高程以 EL 表示，括號為相對 ±0（EL 4.50）之 cm；剖切位置為 LA-10 西側 1:9 坡道中心（y≈−98 m），與 D5 開口重疊。<b class="secw">待確認：</b>連續壁內 1:9 坡道段（約 6 m）景觀高程 4.83～5.45，低於結構 BIM 1F 樓版頂 5.45，需確認該處是否降版。</p>
+  </section>
   <div id="sheet">
   <main id="panel">
 
@@ -630,7 +756,7 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
       </div>
       <ul class="notes">
         <li class="nt"><b>議題一</b>既有施工圍籬（橘色）與養護期保護圍籬（紫色）依 A1-01 現況測量圖標示；需協調拆除範圍、時程、運棄方式與權責分工，並與新設安全圍籬（A1-05）施作銜接。</li>
-        <li class="nt"><b>議題二</b>遺構吊裝及搬運擬由林森北路 D5（8 m 拉開式大門）進出；需協調吊裝時段、車型與迴轉空間。門前公車停靠區、路燈與溝蓋的檢討詳第 03 章既有設施遷移。</li>
+        <li class="nt"><b>議題二</b>遺構吊裝搬運由林森北路 D5（8 m）進出。剖面 A–A 顯示路面 EL 3.99 至 1F 樓版 EL 5.45 高差 <b>1.46 m</b>；現況地坪於 D5 內側另有約 0.6 m 高差，需協調臨時坡道或墊高、吊裝時段與車型。門前公車停靠區詳第 03 章。</li>
       </ul>
       <p class="src">依據：A1-01 現況測量圖（0-施工圖圍籬、0-養護期保護圍籬）；A1-05 安全圍籬及施工大門詳圖。圍籬長度依測量圖圖面量測。</p>
     </section>
@@ -1512,6 +1638,18 @@ function initScene() {
     const pole = new T.Mesh(new T.CylinderGeometry(0.09, 0.12, 8, 10).rotateX(Math.PI / 2), mat('issue')); pole.position.set(lx, ly, Z0 + 4); d1Group.add(pole);
     S.d1dims = dimAB([g0, 14.2], [g1, 14.2], 1.3); d1Group.add(S.d1dims);
   }
+  /* 剖面 A–A cut line (林森北路 → D5 → 1F slab, y = -98.1) */
+  const secGroup = new T.Group(); secGroup.visible = false; ROOT.add(secGroup);
+  function buildSecLine() {
+    const y = -98.1, x0 = -39.4, x1 = 23.4, m = mat('route', { transparent: true, opacity: 0.85 });
+    const g = new T.Mesh(boxG(x0, x1, y - 0.12, y + 0.12, 0, 0.06), m); g.position.z = 5.5 - 5.5; secGroup.add(g);
+    // draped: keep the line just above whatever surface (road ~0, sidewalk 0.17, slab 0.95)
+    g.geometry.dispose(); secGroup.remove(g);
+    [[x0, -29.1, 0.08], [-29.1, -12.9, 0.24], [-12.9, -11.7, 0.08], [-11.7, 22, 1.0], [22, x1, 0.08]].forEach(([a, b, z]) => {
+      const s = new T.Mesh(boxG(a, b, y - 0.13, y + 0.13, z, z + 0.05), m); s.renderOrder = 9; secGroup.add(s);
+    });
+    [x0, x1].forEach((x) => { const p = new T.Mesh(boxG(x - 0.12, x + 0.12, y - 0.12, y + 0.12, 0, 2.2), m); secGroup.add(p); });
+  }
   S.setProposal = (on) => { propGroup.visible = !!on; S.dirty = true; };
 
   /* ---------------------------------------------------------------- sidewalks outside the site fence (A1-01 curb lines): stone paving + curb outline */
@@ -1609,7 +1747,7 @@ function initScene() {
     applyParked();
     dimGroup.visible = !!md.dims && !md.under;
     d5Group.visible = !!md.d5 && !md.under;
-    exGroup.visible = !!md.ex && !md.under;
+    exGroup.visible = !!md.ex && !md.under; secGroup.visible = !!md.sec && !md.under;
     parkGroup.visible = !md.under && !md.d5 && !md.scoot;
     scootGroup.visible = !!md.scoot && !md.under; d1Group.visible = !!md.d1 && !md.under; planterGroup.visible = !md.under;
     ['fence', 'fence2', 'light', 'gate', 'pgate', 'toe'].forEach((n) => { if (LAYERS[n]) LAYERS[n].visible = !md.under; });   // 分階出土 (X-ray): fences, lights and gates removed
@@ -1743,6 +1881,7 @@ function initScene() {
     buildParkConflict();
     buildExisting();
     buildRelocation();
+    buildSecLine();
     S.fadeAll();
     S.ready = true;
     setTheme(S.dark); setMode({});
@@ -1878,6 +2017,12 @@ const P = {
     if (PROP) list.push({ p: [-31.1, -12.5, 0.6], t: '公車停靠區建議位置', s: '林森北路 × 市民大道口・3×10 m', c: 'var(--proposal)' }, { p: [-34.2, -52, 0.6], t: '北移約 79 m', c: 'var(--proposal)', k: 'tag' });
     return list;
   },
+  secA: () => [
+    { p: [-39.4, -98.1, 0.8], t: 'A', c: 'var(--ink)', k: 'd' },
+    { p: [23.4, -98.1, 1.5], t: 'A′', c: 'var(--ink)', k: 'd' },
+    { p: [-23.47, -96.64, 6.4], t: 'D5', k: 'd' },
+    { p: [-11, -98.1, 1.4], t: '剖切線 A–A', s: '1:9 坡道中心・D5 進出', c: 'var(--route)', k: 'tag' },
+  ],
   relHome: () => [
     { p: [-31, -56, 0.6], t: '議題一　機車格塗銷', s: '林森北路 60 格', c: 'var(--erase)' },
     { p: [-31.1, -91.5, 0.6], t: '議題二　公車停靠區遷移', s: 'D5 前 → 林森北路 × 市民大道口', c: 'var(--issue)' },
@@ -1922,6 +2067,7 @@ function setPins(list) {
 function occluders() {
   const R = [], add = (el) => { if (!el) return; const r = el.getBoundingClientRect(); if (r.width > 0 && r.height > 0) R.push(r); };
   add($('#top')); add($('#rail'));
+  if (!$('#secCard').hidden) add($('#secCard'));
   if (!isNarrow()) { add($('#panel')); add($('.sd.on')); const lg = $('#legend'); if (lg.classList.contains('on')) add(lg); }
   return R;
 }
@@ -1959,7 +2105,7 @@ function updatePins() {
 }
 
 /* ---------------------------------------------------------------- chapters */
-const BASE_MODE = { ghost: 0, under: false, arrows: true, trucks: true, ext: false, entry: false, ctx: 1, excStage: 0, openings: true, tunnel: false, dims: false, d5: false, ex: false, scoot: false, d1: false };
+const BASE_MODE = { ghost: 0, under: false, arrows: true, trucks: true, ext: false, entry: false, ctx: 1, excStage: 0, openings: true, tunnel: false, dims: false, d5: false, ex: false, scoot: false, d1: false, sec: false };
 let SCHEME = 'A';
 let PROP = false;
 const CH = [
@@ -2120,13 +2266,13 @@ $$('#washList button').forEach((b) => b.addEventListener('click', () => { $$('#w
 {
   const ISS = [
     { t: '議題一　既有圍籬拆除及運棄', s: '既有施工圍籬、養護期保護圍籬（A1-01）', c: 'var(--exFence)', ic: '一', v: { t: [55, -57, 0], az: 210, el: 50, w: 250 }, mode: { ex: true, d5: false, ghost: 1 }, pins: 'exFence' },
-    { t: '議題二　遺構吊裝進出動線討論', s: '林森北路 D5（8 m）進出，門前公車停靠區', c: 'var(--issue)', ic: '二', v: { t: [-29, -93, 1], az: 270, el: 45, w: 40 }, mode: { ex: false, d5: true, ctx: 0.4 }, pins: 'issues' },
+    { t: '議題二　遺構吊裝進出動線討論', s: '林森北路 D5 進出・剖面 A–A 高程檢討', c: 'var(--issue)', ic: '二', v: { t: [-10, -94, 2], az: 205, el: 34, w: 80 }, mode: { ex: false, d5: false, sec: true, ctx: 0.4 }, pins: 'secA' },
   ];
   $('#issueList').innerHTML = ISS.map((x, i) => `<button class="lgb two" type="button" data-i="${i}" aria-pressed="false">${chip(x.ic, x.c, true)}<span><b>${x.t}</b><br><small>${x.s}</small></span><em></em></button>`).join('');
   $$('#issueList button').forEach((b) => b.addEventListener('click', () => {
     if (!S.ok) return; const x = ISS[+b.dataset.i];
     $$('#issueList button').forEach((y) => y.setAttribute('aria-pressed', String(y === b)));
-    markUser(); S.setMode(x.mode); setPins(P[x.pins]()); $('#exBox').hidden = !x.mode.ex; $('#d5Note').hidden = !x.mode.d5; camTo(x.v, false, 1500); S.setMarker && S.setMarker(null);
+    markUser(); S.setMode(x.mode); setPins(P[x.pins]()); $('#exBox').hidden = !x.mode.ex; $('#d5Note').hidden = !x.mode.sec; $('#secCard').hidden = !x.mode.sec; onResize(); camTo(x.v, false, 1500); S.setMarker && S.setMarker(null);
   }));
   { const E = FEAT.existFence || {};
     $('#exLg').innerHTML = lgHTML([
@@ -2252,6 +2398,7 @@ function go(i, opts) {
   if (c.id === 'exc') setExc(c.mode.excStage || 0);
   if (PROP) { PROP = false; if (S.ok) S.setProposal(false); }
   $('#relBox').hidden = true; $$('#relList button').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+  $('#secCard').hidden = true;
   if (c.id === 'issues') { $('#exBox').hidden = true; $('#d5Note').hidden = true; $$('#issueList button').forEach((x) => x.setAttribute('aria-pressed', 'false')); }
   $$('#gateList button, #openList button, #washList button, #officeList button').forEach((x) => x.setAttribute('aria-pressed', 'false'));
   setPins(c.pins ? P[c.pins]() : []);
@@ -2313,6 +2460,7 @@ function setHome(on) {
 $('#homeStart').addEventListener('click', () => { setHome(false); go(0, { user: true }); });
 $$('#home [data-go]').forEach((b) => b.addEventListener('click', () => { setHome(false); go(Math.max(0, CH.findIndex((c) => c.id === b.dataset.go)), { user: true }); }));
 $('#mark').addEventListener('click', () => setHome(true));
+$('#secClose').addEventListener('click', () => { $('#secCard').hidden = true; updatePins(); });
 $('#mark').addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setHome(true); } });
 {
   const h = (location.hash || '').replace('#', '');
