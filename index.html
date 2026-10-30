@@ -702,16 +702,16 @@ body.home #top,body.home #sheet,body.home #rail,body.home #legend,body.home .sd,
     <section class="pg" data-s="exc" style="--c:var(--soil)">
       <div class="mk"><span>07</span>逆打分階出土<em>貳、二（一）</em></div>
       <h2>逆打<em>六階</em>開挖，<br>由取土口垂直出土</h2>
-      <p class="lede">逆打開挖分六階（GL−2.5 → −22 m），各階土方由取土口以長臂抓斗吊出，經出土動線運離；北側機車道另分兩階開挖至 −5.4 m。拖曳右側滑桿可逐階檢視開挖量體。</p>
+      <p class="lede">逆打開挖分六階（GL−2.6 → −22 m），各階土方由取土口以長臂抓斗吊出，經出土動線運離；北側機車道另分兩階開挖至 −5.4 m。拖曳右側滑桿可逐階檢視開挖量體。</p>
       <div class="figs">
-        <div class="fig"><div class="n">6<small>階</small></div><div class="l">−2.5 → −22 m</div></div>
-        <div class="fig"><div class="n">25.7<small>萬 m³</small></div><div class="l">六階出土合計 257,470 m³</div></div>
+        <div class="fig"><div class="n">6<small>階</small></div><div class="l">−2.6 → −22 m</div></div>
+        <div class="fig"><div class="n">26.0<small>萬 m³</small></div><div class="l">六階出土合計 260,357 m³</div></div>
         <div class="fig"><div class="n sm">臺北港</div><div class="l">B1～B6 土方去化場址</div></div>
       </div>
       <ul class="notes">
         <li class="nt"><b>去化</b>B1～B6 運往臺北港物流倉儲區第三、四期造地工程；B7 土方送國際、新五、遠嘉土資場。</li>
       </ul>
-      <p class="src">依據：貳、二（一）各階段土方開挖出土數量、土方出土運輸路線及棄土場址；開挖量體為 BIM 模型地形實體。</p>
+      <p class="src">依據：華山司法園區地下室開挖土方數量計算（PC 20 cm，小計含上一階 PC 及一挖機車道土方）；貳、二（一）土方出土運輸路線及棄土場址；開挖量體為 BIM 模型地形實體。</p>
     </section>
 
     <section class="pg" data-s="traffic" style="--c:var(--glass)">
@@ -2338,7 +2338,8 @@ const OFF = [
 ];
 $('#officeList').innerHTML = OFF.map((f, i) => `<button class="lgb two" type="button" data-i="${i}" aria-pressed="false">${chip(f.ic, f.c, true)}<span><b>${f.t}</b><br><small>${f.s}</small></span><em></em></button>`).join('');
 $$('#officeList button').forEach((b) => b.addEventListener('click', () => { $$('#officeList button').forEach((x) => x.setAttribute('aria-pressed', String(x === b))); focusOn(OFF[+b.dataset.i].p, 60, 36); }));
-const EXC = [[0, 0, '開挖前'], [-2.5, 28231, '第一階'], [-6.9, 49687, '第二階'], [-10.4, 39524, '第三階'], [-13.9, 39524, '第四階'], [-17.4, 39524, '第五階'], [-22.0, 60980, '最終開挖']];
+// 土方數量 (2026-10-30, PC 20 cm): 小計 = 當層開挖體積 + 上一階 PC 體積 (+ 一挖機車道 624.57 m³)
+const EXC = [[0, 0, '開挖前'], [-2.6, 29986, '第一階'], [-7.0, 51946, '第二階'], [-10.5, 41783, '第三階'], [-14.0, 41783, '第四階'], [-17.5, 41783, '第五階'], [-22.0, 53076, '最終開挖']];
 $('#excSteps').innerHTML = EXC.slice(1).map(([d, v, n], i) => `<li data-i="${i + 1}" style="cursor:pointer"><b>${n}　GL${d} m</b>${fmtN(v)} m³</li>`).join('');
 function setExc(k) {
   k = clamp(k, 0, 6);
